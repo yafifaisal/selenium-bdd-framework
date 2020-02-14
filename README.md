@@ -5,7 +5,7 @@ This project is built using Selenium Webdriver with Java and TestNG.
 
 Documentation
 -------------
-* [Installation](selenium-bdd-framework/doc/installation.md)
+* [Installation](https://github.com/yafifaisal/selenium-bdd-framework/blob/master/selenium-bdd-framework/doc/Installation.md)
 
 Download a Framework
 --------------
