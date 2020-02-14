@@ -7,6 +7,11 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Selenium BDD Framework</name>
 
+	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-java -->
 		<dependency>
@@ -36,12 +41,18 @@
 			</exclusions>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-junit -->
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-junit</artifactId>
+			<version>1.2.6</version>
+		</dependency>
+
 		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
 			<version>7.1.0</version>
-			<scope>test</scope>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/net.masterthought/cucumber-reporting -->
@@ -89,6 +100,10 @@
 	</dependencies>
 
 	<build>
+
+		<sourceDirectory>${basedir}/src</sourceDirectory>
+		<testSourceDirectory>${basedir}/test</testSourceDirectory>
+
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -113,7 +128,7 @@
 							<goal>generate</goal>
 						</goals>
 						<configuration>
-							<projectName>MyProjectName</projectName>  <!-- Replace with project name -->
+							<projectName>selenium-bdd-framework</projectName>  <!-- Replace with project name -->
 							<outputDirectory>${project.build.directory}/target</outputDirectory>
 							<cucumberOutput>${project.build.directory}/target${project.build.directory}</cucumberOutput>
 							<buildNumber>1</buildNumber>
@@ -128,8 +143,17 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.8.1</version>
 				<configuration>
+					<encoding>UTF-8</encoding>
 					<source>13</source>
 					<target>13</target>
+					<compilerArgument>-Werror</compilerArgument>
+					<systemPropertyVariables>
+						<property>
+							<name>browser</name>
+							<value>${browser}</value>
+						</property>
+					</systemPropertyVariables>
+
 				</configuration>
 			</plugin>
 		</plugins>

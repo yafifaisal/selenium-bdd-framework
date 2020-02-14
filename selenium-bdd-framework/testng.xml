@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Automation Tets Report">
-	<test name="Automation Tets Report">
+	<test name="Automation Test Report">
 		<classes>
-			<class name="TestRunner" />
+			<class name="TestRunner.Runner" />
 		</classes>
 	</test>
 </suite>
